@@ -64,7 +64,7 @@ with st.form('revenue_table1'):
     st.markdown("<h3 style='text-align: center; color: white;'>Выберите интересующие вас данные.</h3>", unsafe_allow_html=True)
     unit = st.multiselect(options=monthly_profit['Юнит'].unique(), default=monthly_profit['Юнит'].unique(), label='Выберите Юнит')
     month = st.slider(value=[1, 12], max_value=12, min_value=1, step=1, label='Выберите Месяц')
-    st.form_submit_button('Submit')
+    st.form_submit_button('Выбрать')
 
 col1, col2 = st.columns(2)
 
@@ -98,7 +98,7 @@ st.markdown("<h3 style='text-align: center; color: white;'>Отдельный г
 with st.form('monthly_revenue'):
 
     month = st.selectbox(label= 'Выберете месяц', options=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
-    st.form_submit_button(label='Submit')
+    st.form_submit_button(label='Выбрать')
 
 graph_df = monthly_profit[monthly_profit['Месяц'] == month]
 fig = px.bar(graph_df,
