@@ -16,7 +16,10 @@ st.sidebar.write('''
 
 Данные выгружаются из Google Sheets при входе на страницу и храняться в кэше для удобства использования веб-приложения.
 
-Для того, чтобы обновить данные * Нажмите С и перезагрузите страницу.*''')
+Для того, чтобы обновить данные * Нажмите С и перезагрузите страницу.*
+
+Все представленные графики интерактивные.
+Наведите курсор на обьект, чтобы узнать подробную информацию.''')
 
 @st.cache
 def load_data_cache():
@@ -99,7 +102,7 @@ st.markdown("<h3 style='text-align: center; color: white;'>Отдельный г
 
 with st.form('monthly_revenue'):
 
-    month = st.selectbox(label= 'Выберете месяц', options=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+    month = st.selectbox(label= 'Выберите месяц', options=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
     st.form_submit_button(label='Выбрать')
 
 graph_df = monthly_profit[monthly_profit['Месяц'] == month]
