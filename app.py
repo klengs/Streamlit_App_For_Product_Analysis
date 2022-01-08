@@ -81,7 +81,7 @@ with col2:
     st.write('''Здесь вы можете посмотреть самые продоваемые продукты за каждый месяц.''')
     most_profitable_product[most_profitable_product['Юнит'].isin(unit) & most_profitable_product['Месяц'].isin(range(month[0], month[1]+1))]
 
-st.markdown("<h3 style='text-align: center; color: white;'>Визуализация ежемесячной выручки для юнитов по продуктам.</h3>", unsafe_allow_html=True)
+st.subheader('Визуализация ежемесячной выручки для юнитов по продуктам.')
 
 fig = px.bar(monthly_profit,
              x='Юнит',
@@ -98,7 +98,7 @@ fig.update_traces(marker_line_width=1.5, opacity=0.7)
 
 st.plotly_chart(fig, use_container_width=True)
 
-st.markdown("<h3 style='text-align: center; color: white;'>Отдельный график для каждого месяца.</h3>", unsafe_allow_html=True)
+st.subheader('Отдельный график для каждого месяца.')
 
 with st.form('monthly_revenue'):
 
