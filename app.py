@@ -33,7 +33,7 @@ st.header('Доли завершенных и незавершенных зак�
 fig = px.pie(orders_info,
              names=orders_info.index,
              values='Кол-во заказов',
-             color_discrete_sequence=px.colors.qualitative.Set3)
+             color_discrete_sequence=px.colors.qualitative.Safe)
 fig.update_layout(showlegend=False)
 fig.update_traces(marker=dict(line=dict(color='white', width=0)),
                   opacity=0.7,
@@ -48,7 +48,7 @@ fig = px.bar(unit_revenue,
              x=unit_revenue.index,
              y='Выручка',
              color=unit_revenue.index,
-             color_discrete_sequence=px.colors.qualitative.Set3,
+             color_discrete_sequence=px.colors.qualitative.Safe,
              hover_data=['Выручка за заказ']
              )
 fig.update_layout(showlegend=False,
@@ -84,7 +84,7 @@ fig = px.bar(monthly_profit,
              x='Юнит',
              y='Выручка',
              color='Название продукта',
-             color_discrete_sequence=px.colors.qualitative.Set3,
+             color_discrete_sequence=px.colors.qualitative.Safe,
              facet_col='Месяц',
              facet_col_wrap=6,
              labels={'Юнит':''})
@@ -107,7 +107,7 @@ fig = px.bar(graph_df,
              x='Юнит',
              y='Выручка',
              color='Название продукта',
-             color_discrete_sequence=px.colors.qualitative.Set3)
+             color_discrete_sequence=px.colors.qualitative.Safe)
 fig.update_layout(showlegend=False)
 fig.update_xaxes(showgrid=False)
 fig.update_yaxes(showgrid=False)
